@@ -1,6 +1,9 @@
 const express = require("express");
+require("dotenv").config();//para o hiroko 
 const app = express();
 const path = require("path"); // biblioteca do express para linkar path e guarda no app abaixo
+
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));// achar os arquivos estaticos de js e css da pasta public para linkar o css e script
@@ -43,4 +46,4 @@ app.get("/", (req, res) =>{
 });
 
 app.listen(3000, () =>
-    console.log("Rodando em http://localhost:3000"));
+    console.log(`Rodando em http://localhost:${port}`));
