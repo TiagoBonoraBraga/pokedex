@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-const path = require("path"); // biblioteca do express para linkar o js da pasta public
+const path = require("path"); // biblioteca do express para linkar path e guarda no app abaixo
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));// achar os arquivos estaticos de js da pasta public para linkar o css e script
+app.use(express.static(path.join(__dirname, "public")));// achar os arquivos estaticos de js e css da pasta public para linkar o css e script
+app.use(express.urlencoded());
 
 const pokedex = [
     {
@@ -38,7 +39,7 @@ const pokedex = [
 //rotas
 
 app.get("/", (req, res) =>{
-    res.render("index", {pokedex});
+    res.render("index", {pokedex});//estou pegando os dados da array e renderizando na pg
 });
 
 app.listen(3000, () =>
