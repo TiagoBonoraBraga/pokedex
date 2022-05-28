@@ -1,5 +1,6 @@
+require("dotenv").config();//para o hiroko //para o hiroko 
 const express = require("express");
-require("dotenv").config();//para o hiroko 
+//para o hiroko 
 const app = express();
 const path = require("path"); // biblioteca do express para linkar path e guarda no app abaixo
 
@@ -45,5 +46,5 @@ app.get("/", (req, res) =>{
     res.render("index", {pokedex});//estou pegando os dados da array e renderizando na pg
 });
 
-app.listen(3000, () =>
+app.listen(port, () =>
     console.log(`Rodando em http://localhost:${port}`));
