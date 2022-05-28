@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));// achar os arquivos estaticos de js e css da pasta public para linkar o css e script
-app.use(express.urlencoded());
+app.use(express.urlencoded());//pega as info de um body q vem do ejs
 
 const pokedex = [
     {
@@ -45,6 +45,15 @@ const pokedex = [
 app.get("/", (req, res) =>{
     res.render("index", {pokedex});//estou pegando os dados da array e renderizando na pg
 });
+
+app.post("/add", (req, res) => { //recebe os dados do form pela rota /add metodo post
+    const pokemon = req.body;//vai receber a requisição do body e colocar na variavel pkemon que vai ser cadastrado
+    
+    pokedex.push(pokemon);  //vai empurrar o pokemon novo na array
+ 
+ 
+    res.redirect("/"); // vai rendirecionar as info e colocar na rote principal o pokemon novo
+})
 
 app.listen(port, () =>
     console.log(`Rodando em http://localhost:${port}`));
