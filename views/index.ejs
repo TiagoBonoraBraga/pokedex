@@ -8,10 +8,23 @@
     <title>Pokedex</title>
 </head>
 <body>
+
+    <nav>
+        <ul>
+            <li><img src="/img/pokebola.png" alt="Pokebola"></li>
+            <li>
+                <a href="/">
+                    <h1>Pokedex</h1>
+                </a>                
+            </li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#cards">Pokemons</a></li>
+        </ul>
+     
+    </nav>
+
     <header>
-
-        <h1>Pokedex</h1>
-
+        <img src="/img/banner.jpg" alt="banner">
     </header>
 
     <main>
@@ -79,7 +92,8 @@
                             <h3><%= pokemon.nome %></h3>
                             <p class="descricao"><%= pokemon.descricao %></p>
                             <p>Tipo: <%= pokemon.tipo %></p>
-                            <a href="/detalhes/<%= pokemon.id %>">Editar</a>
+                            <a id="editar" href="/detalhes/<%= pokemon.id %>">Editar</a>
+                            <a id="apagar" href="/delete/<%= pokemon.id %>">Apagar</a>
                             
                         </div>
                     <% }) %>
@@ -91,6 +105,10 @@
 
             
     </main>
+    <footer>
+        <p>Todos os direitos reservados para OGAIT ASHTAR &copy;</p>
+        <p>Dados retirados de <a href="https://www.pokemon.com/br/pokedex/" target="_blank">Pokedex</a></p>
+    </footer>
   
 
 </body>

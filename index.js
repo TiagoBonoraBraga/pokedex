@@ -53,13 +53,13 @@ app.post("/create", (req, res) => { //recebe os dados do form pela rota /add met
     const pokemon = req.body;//vai receber a requisição do body e colocar na variavel pkemon que vai ser cadastrado
     pokemon.id = pokedex.length + 1; // add o id nos novos pokemons, recebe o tamanhp da array mais 1
     pokedex.push(pokemon);  //vai empurrar o pokemon novo na array
-    res.redirect("/"); // vai rendirecionar as info para "/ que vai renderizar para index a pokedex atualizada e colocar na rote principal o pokemon novo
+    res.redirect("/#cards"); // vai rendirecionar as info para "/ que vai renderizar para index a pokedex atualizada e colocar na rote principal o pokemon novo
 });
 
 app.get("/detalhes/:id", (req, res) => {
     const id = +req.params.id;
     pokemon = pokedex.find((pokemon) => pokemon.id === id);  
-    res.redirect("/");
+    res.redirect("/#cadastro");
 });
 
 //update
@@ -69,8 +69,14 @@ app.post("/update/:id", (req, res) =>{
     newPokemon.id = id + 1;
     pokedex[id] = newPokemon;
     pokemon = undefined;
-    res.redirect("/");
+    res.redirect("/#cards");
 });
+
+app.get("/delete/:id", (req, res) =>{
+    const id = +req.params.id - 1;
+    delete pokedex[id];
+    res.redirect("/#cards");
+})
 
 app.listen(port, () =>
     console.log(`Rodando em http://localhost:${port}`));

@@ -6,20 +6,47 @@
     margin: 0;
     padding: 0;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;/*deixa o scroll mais lento*/
 
 }
 
-/*estilização do header e main */
+/*estilização do nav e main */
 
-header{
-    padding: 3rem;
-    background-color: red;
+nav{
+    background-color: rgb(221, 0, 0);
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
 }
 
-header h1{
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 0.6rem;
+}
+
+nav img{
+    width: 3rem;
+}
+
+nav h1{
     color: white;
-    font-size: 3rem;
-    text-align: center;
+    font-size: 1.4rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+header img{
+    width: 100%;
+    margin-top: 4rem;
 }
 
 main{
@@ -61,9 +88,9 @@ section#cards div.card p.descricao{
     margin-bottom: 1rem;
 }
 
-section#cards div.card a{
+section#cards div.card a#editar{
     padding: .6rem;
-    width: 20%;
+    
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -77,8 +104,30 @@ section#cards div.card a{
     margin-top: 2rem;
 }
 
-section#cards div.card a:hover{
+section#cards div.card a#apagar{
+    padding: .6rem;
+    
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px red;
+    color: red;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+
+section#cards div.card a#editar:hover{
     background-color: rgb(134, 134, 252);
+    color: white;
+}
+
+section#cards div.card a#apagar:hover{
+    background-color: red;
     color: white;
 }
 
@@ -137,4 +186,27 @@ section#cadastro form button{
 section#cadastro form button:hover{
     background-color: red;
     color: white;
+}
+
+footer{
+    background-color:rgb(221, 0, 0) ;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer p{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: .3rem;
+
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
 }
