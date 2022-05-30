@@ -1,6 +1,6 @@
-require("dotenv").config();//para o hiroko //para o hiroko 
+require("dotenv").config();//para o hiroko 
 const express = require("express");
-//para o hiroko 
+
 const app = express();
 const path = require("path"); // biblioteca do express para linkar path e guarda no app abaixo
 
@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));// achar os arquivos estaticos de js e css da pasta public para linkar o css e script
-app.use(express.urlencoded());//pega as info de um body q vem do ejs
+app.use(express.urlencoded());//pega as info de um body nesse ex o form q vem do ejs transformando em .json
 
 const pokedex = [
     {
@@ -42,18 +42,35 @@ const pokedex = [
 
 //rotas
 
-app.get("/", (req, res) =>{
-    res.render("index", {pokedex});//estou pegando os dados da array e renderizando na pg
+let pokemon = undefined;
+
+app.get("/", (req, res) =>{//é o read do crud   
+    res.render("index", { pokedex, pokemon });//estou pegando os dados da array e renderizando na pg
 });
 
-app.post("/add", (req, res) => { //recebe os dados do form pela rota /add metodo post
+//post é create do crud
+app.post("/create", (req, res) => { //recebe os dados do form pela rota /add metodo post
     const pokemon = req.body;//vai receber a requisição do body e colocar na variavel pkemon que vai ser cadastrado
-    
+    pokemon.id = pokedex.length + 1; // add o id nos novos pokemons, recebe o tamanhp da array mais 1
     pokedex.push(pokemon);  //vai empurrar o pokemon novo na array
- 
- 
-    res.redirect("/"); // vai rendirecionar as info e colocar na rote principal o pokemon novo
-})
+    res.redirect("/"); // vai rendirecionar as info para "/ que vai renderizar para index a pokedex atualizada e colocar na rote principal o pokemon novo
+});
+
+app.get("/detalhes/:id", (req, res) => {
+    const id = +req.params.id;
+    pokemon = pokedex.find((pokemon) => pokemon.id === id);  
+    res.redirect("/");
+});
+
+//update
+app.post("/update/:id", (req, res) =>{ 
+    const id = +req.params.id - 1;    
+    const newPokemon = req.body;
+    newPokemon.id = id + 1;
+    pokedex[id] = newPokemon;
+    pokemon = undefined;
+    res.redirect("/");
+});
 
 app.listen(port, () =>
     console.log(`Rodando em http://localhost:${port}`));

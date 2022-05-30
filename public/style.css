@@ -1,3 +1,5 @@
+/*estilização da pg e fonts*/
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&family=Roboto:ital,wght@0,300;1,300&display=swap');
 
 *{
@@ -6,6 +8,8 @@
     font-family: Roboto, Arial, Helvetica, sans-serif;
 
 }
+
+/*estilização do header e main */
 
 header{
     padding: 3rem;
@@ -22,6 +26,8 @@ main{
     margin: 0 10rem 0 10rem;
 }
 
+/*estilização dos cards*/
+
 section#cards{
     display: flex;
     justify-content: space-evenly;
@@ -34,14 +40,20 @@ section#cards div.card{
     width: 20rem;
     box-shadow: 5px 5px 5px 5px #00000015;
     padding: 1rem;
-    margin-top: 3rem;
+    margin: 3rem 0 5rem 0;
+}
+
+section#cards h2{
+    width: 100%;
+    text-align: center;
+
 }
 
 section#cards div.card img{
     width: 100%;
 }
 
-section#cards div.card h2{
+section#cards div.card h3{
     margin-bottom: 1rem;
 }
 
@@ -49,23 +61,54 @@ section#cards div.card p.descricao{
     margin-bottom: 1rem;
 }
 
+section#cards div.card a{
+    padding: .6rem;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px rgb(134, 134, 252);
+    color: rgb(134, 134, 252);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+section#cards div.card a:hover{
+    background-color: rgb(134, 134, 252);
+    color: white;
+}
+
+/*esttilização do Formulário*/
 
 section#cadastro{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-
     padding: 5rem;
-
 }
+
+section#cadastro img{
+    width: 55%;
+    
+}
+
 section#cadastro h2{
     width: 100%;
     text-align: center;
     padding-bottom: 5rem;
+    color: rgb(145, 143, 143);
 }
 
 section#cadastro form{
-    width: 50%;
+    width: 100%;
+}
+
+section#cadastro form label{
+    margin: 1rem;
+    color: rgb(173, 169, 169);
 }
 
 section#cadastro form input{
@@ -75,11 +118,6 @@ section#cadastro form input{
     outline: none;/*tira o sublinhado do input a borda*/
     border: solid 2px rgb(211, 208, 208);
     margin: 0 1rem 1rem 1rem;
-}
-
-section#cadastro form label{
-    margin: 1rem;
-    color: rgb(173, 169, 169);
 }
 
 section#cadastro form button{
@@ -94,7 +132,6 @@ section#cadastro form button{
     color: red;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    
 }
 
 section#cadastro form button:hover{
