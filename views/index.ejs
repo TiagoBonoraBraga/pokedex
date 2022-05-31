@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Pokedex</title>
 </head>
 <body>
@@ -41,17 +41,17 @@
         
                     <form action="/create" method="POST"><!--manda os dados para a rota /add pelo metodo post-->
         
-                        <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" >
+                        <label for="nome" id="labelNome">Nome:</label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite um nome:" required>
         
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" name="descricao" id="descricao">
+                        <label for="descricao" id="labelDescricao">Descrição:</label>
+                        <input type="text" name="descricao" id="descricao" placeholder="Digite uma descrição:" required>
         
-                        <label for="tipo">Tipo:</label>
-                        <input type="text" name="tipo" id="tipo">
+                        <label for="tipo" id="labelTipo">Tipo:</label>
+                        <input type="text" name="tipo" id="tipo" placeholder="Digite um tipo:" required>
         
-                        <label for="imagem">Link da Imagem</label>
-                        <input type="text" name="imagem" id="imagem">
+                        <label for="imagem" id="labelImagem">Link da Imagem</label>
+                        <input type="text" name="imagem" id="imagem" placeholder="Inserir Link da imagem:" required>
         
                         <button id="btnCadastrar" type="submit">Cadastrar</button>
         
@@ -63,22 +63,23 @@
         
                     <form action="/update/<%= pokemon.id %>" method="POST"><!--manda os dados para a rota /add pelo metodo post-->
         
-                        <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" value="<%= pokemon.nome %>">
+                        <label for="Nome" id="labelNome">Nome:</label>
+                        <input type="text" name="nome" id="nome" value="<%= pokemon.nome %>"  placeholder="Digite um nome:" required>
         
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" name="descricao" id="descricao" value="<%= pokemon.descricao %>">
+                        <label for="Descricao" id="labelDescricao">Descrição:</label>
+                        <input type="text" name="descricao" id="descricao" value="<%= pokemon.descricao %>" placeholder="Digite uma descrição:" required>
         
-                        <label for="tipo">Tipo:</label>
-                        <input type="text" name="tipo" id="tipo" value="<%= pokemon.tipo %>">
+                        <label for="Tipo" id="labelTipo">Tipo:</label>
+                        <input type="text" name="tipo" id="tipo" value="<%= pokemon.tipo %>" placeholder="Digite um tipo:" required>
         
-                        <label for="imagem">Link da Imagem</label>
-                        <input type="text" name="imagem" id="imagem" value="<%= pokemon.imagem %>">
+                        <label for="Imagem" id="labelImagem">Link da Imagem</label>
+                        <input type="text" name="imagem" id="imagem" value="<%= pokemon.imagem %>" placeholder="Inserir Link da imagem:" required>
+
         
                         <button id="btnAtualizar" type="submit">Atualizar</button>
         
                     </form>
-                   <% } %>
+                <% } %>
                 </section>
         
                 <section id="cards">
@@ -97,19 +98,15 @@
                             
                         </div>
                     <% }) %>
-
-            </div>
-            
-        
-            </section>
-
-            
+            </div>          
+        </section>            
     </main>
+
     <footer>
         <p>Todos os direitos reservados para OGAIT ASHTAR &copy;</p>
         <p>Dados retirados de <a href="https://www.pokemon.com/br/pokedex/" target="_blank">Pokedex</a></p>
     </footer>
   
-
+<script src="/js/script.js"></script> 
 </body>
 </html>
