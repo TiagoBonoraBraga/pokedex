@@ -1,3 +1,5 @@
+//validação dos campos do formulário
+
 const labelNome = document.querySelector("#labelNome");
 const inputNome = document.querySelector("#nome");
 

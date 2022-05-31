@@ -10,7 +10,7 @@
 
 }
 
-/*estilização do nav e main */
+/*estilização do nav, header e main */
 
 nav{
     background-color: rgb(221, 0, 0);
@@ -187,6 +187,8 @@ section#cadastro form button:hover{
     background-color: red;
     color: white;
 }
+
+/*estilização do footer*/
 
 footer{
     background-color:rgb(221, 0, 0) ;
