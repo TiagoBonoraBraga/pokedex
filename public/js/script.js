@@ -14,6 +14,15 @@ const inputImagem = document.querySelector("#imagem");
 
 const button = document.querySelector("btnCadastrar");
 
+//mensagem de cadastro
+const closeMessage = document.querySelector("#close");
+const message = document.querySelector("#message");
+
+
+
+
+
+
 inputNome.addEventListener("keyup", () =>{
     if(inputNome.value.length < 3){
         labelNome.innerHTML = "Nome: (Digite um nome válido)";
@@ -25,43 +34,52 @@ inputNome.addEventListener("keyup", () =>{
 });
 
 inputDescricao.addEventListener("keyup", ()=>{
-    if(inputDescricao.value.length < 3){
-        labelDescricao.innerHTML = "Nome: (Digite uma descrição.)";
+    if(inputDescricao.value.length < 10){
+        labelDescricao.innerHTML = "Descrição: (Digite uma descrição.)";
         labelDescricao.style.color = "red";
     }else{
-        labelDescricao.innerHTML = "Nome: ";
+        labelDescricao.innerHTML = "Descrição: ";
         labelDescricao.style.color = "rgb(173, 169, 169)";
     }
 });
 
 inputTipo.addEventListener("keyup", ()=>{
-    if(inputTipo.value.length < 2){
-        labelTipo.innerHTML = "Nome: (Digite uma Tipo válido.)";
+    if(inputTipo.value.length < 3){
+        labelTipo.innerHTML = "Tipo: (Digite um Tipo válido.)";
         labelTipo.style.color = "red";
     }else{
-        labelTipo.innerHTML = "Nome: ";
+        labelTipo.innerHTML = "Tipo: ";
         labelTipo.style.color = "rgb(173, 169, 169)";
     }
 });
 
 inputImagem.addEventListener("keyup", ()=>{
     if(inputImagem.value.length == 0 ){
-        labelImagem.innerHTML = "Nome: (Digite um link da imagem válido.)";
+        labelImagem.innerHTML = "Link: (Digite um link da imagem válido.)";
         labelImagem.style.color = "red";
     }else{
-        labelImagem.innerHTML = "Nome: ";
+        labelImagem.innerHTML = "Link: ";
         labelImagem.style.color = "rgb(173, 169, 169)";
     }
 });
 
+//message
+
+closeMessage.addEventListener("click", () =>{
+    message.style.display = "none"
+});
+
+setTimeout(() => {
+    message.style.display = "none"
+}, 5000);
 
 
 
 
 
 
-// btnSubmit.addEventListener("click", ()=>{
-//     alert("Formulario enviado");
-// })
+
+
+
 
 

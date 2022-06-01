@@ -1,5 +1,6 @@
 require("dotenv").config();//para o hiroko 
 const express = require("express");
+const { set } = require("express/lib/application");
 
 const app = express();
 const path = require("path"); // biblioteca do express para linkar path e guarda no app abaixo
@@ -42,17 +43,24 @@ const pokedex = [
 
 //rotas
 
+let message = "";
 let pokemon = undefined;
 
 app.get("/", (req, res) =>{//é o read do crud   
-    res.render("index", { pokedex, pokemon });//estou pegando os dados da array e renderizando na pg
+    
+    setTimeout(() => {
+        message = "";
+     }, 1000);
+
+    res.render("index", {pokedex, pokemon, message});//estou pegando os dados da array e renderizando na pg
 });
 
 //post é create do crud
 app.post("/create", (req, res) => { //recebe os dados do form pela rota /add metodo post
     const pokemon = req.body;//vai receber a requisição do body e colocar na variavel pkemon que vai ser cadastrado
     pokemon.id = pokedex.length + 1; // add o id nos novos pokemons, recebe o tamanhp da array mais 1
-    pokedex.push(pokemon);  //vai empurrar o pokemon novo na array
+    pokedex.push(pokemon);//vai empurrar o pokemon novo na array
+    message = `Parabéns o pokemon com o nome de:  ${pokemon.nome}, foi cadastrado com sucesso`;
     res.redirect("/#cards"); // vai rendirecionar as info para "/ que vai renderizar para index a pokedex atualizada e colocar na rote principal o pokemon novo
 });
 
@@ -76,7 +84,7 @@ app.get("/delete/:id", (req, res) =>{
     const id = +req.params.id - 1;
     delete pokedex[id];
     res.redirect("/#cards");
-})
+});
 
 app.listen(port, () =>
     console.log(`Rodando em http://localhost:${port}`));

@@ -23,6 +23,12 @@
      
     </nav>
 
+    <% if(message != "") { %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% } %>
+
     <header>
         <img src="/img/banner.jpg" alt="banner">
     </header>
@@ -31,7 +37,7 @@
 
         <section id="cadastro">
 
-            <img src="/img/pokedex.png" alt="pokedex foto">
+            <img id="game" src="/img/pokedex.png" alt="pokedex foto">
 
             <div>
 
@@ -51,7 +57,7 @@
                         <input type="text" name="tipo" id="tipo" placeholder="Digite um tipo:" required>
         
                         <label for="imagem" id="labelImagem">Link da Imagem</label>
-                        <input type="text" name="imagem" id="imagem" placeholder="Inserir Link da imagem:" required>
+                        <input type="url" name="imagem" id="imagem" placeholder="Inserir Link da imagem:" required>
         
                         <button id="btnCadastrar" type="submit">Cadastrar</button>
         
@@ -73,7 +79,7 @@
                         <input type="text" name="tipo" id="tipo" value="<%= pokemon.tipo %>" placeholder="Digite um tipo:" required>
         
                         <label for="Imagem" id="labelImagem">Link da Imagem</label>
-                        <input type="text" name="imagem" id="imagem" value="<%= pokemon.imagem %>" placeholder="Inserir Link da imagem:" required>
+                        <input type="url" name="imagem" id="imagem" value="<%= pokemon.imagem %>" placeholder="Inserir Link da imagem:" required>
 
         
                         <button id="btnAtualizar" type="submit">Atualizar</button>
