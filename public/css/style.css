@@ -253,6 +253,8 @@ footer a {
   font-weight: 600;
 }
 
+/*responsividade*/
+
 @media (max-width: 1338px) {
   section#cadastro form button {
     width: 50%;
