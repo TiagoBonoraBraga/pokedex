@@ -8,6 +8,11 @@
 
 - Para inicializar nossa Pokédex será preciso usa o sistema de organização MVC.
 
+Criar repositório no Github com: - public 
+                                 - readme
+                                 - gitgnore
+                                 - licença Mozilla
+
 1 - crie as pastas para organização do projeto.
 
   - pasta public contendo: - css - style.css
