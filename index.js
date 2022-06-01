@@ -15,7 +15,7 @@ const pokedex = [
     {
         id: 1,
         nome:"Bulbasaur",
-        descricao: "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
+        descricao: "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
         tipo: "Grass",
         imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
     },
@@ -23,7 +23,7 @@ const pokedex = [
     {
         id: 2,
         nome: "Charmander",
-        descricao: "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+        descricao: "Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.",
         tipo: "Fire",
         imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
 
@@ -32,7 +32,7 @@ const pokedex = [
     {
         id: 3,
         nome: "Squirtle",
-        descricao: "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
+        descricao: "Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.",
         tipo: "Water",
         imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
 
