@@ -7,16 +7,16 @@
   padding: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   scroll-behavior: smooth; /*deixa o scroll mais lento*/
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
-body{
+body {
   width: 100%;
   background-color: white;
-  height: 100vh;/*vai c adequar a tela q abrir bom colocar*/
-  display: flex;/*para responsivo*/
-  flex-direction: column;/*da a direção do site um em cima do outro*/
-  justify-content: space-between;  /*direciona aonde tem q ficar as partes*/
+  height: 100%; /*vai c adequar a tela q abrir bom colocar*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /*estilização do nav, header, main e message*/
@@ -27,13 +27,13 @@ nav {
   position: fixed;
   z-index: 9999;
   width: 100%;
-  
 }
 
 nav ul {
   display: flex;
   align-items: center;
   list-style: none;
+  width: 100%;
 }
 
 nav ul li {
@@ -56,13 +56,14 @@ nav ul li a {
 }
 
 header img {
+  display: flex;
   width: 100%;
   margin-top: 4rem;
 }
 
 section#message {
   padding: 1.5rem;
-  margin-top: 1rem ;
+  margin-top: 1rem;
   background-color: black;
   color: white;
   position: fixed;
@@ -232,7 +233,7 @@ section#cadastro form button:hover {
 
 footer {
   background-color: rgb(221, 0, 0);
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -242,7 +243,7 @@ footer p {
   width: 100%;
   color: white;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.3rem;
 }
 
@@ -252,109 +253,108 @@ footer a {
   font-weight: 600;
 }
 
-
-@media(max-width:1338px){
-
-    section#cadastro form button{
-        width: 50%;
-    }
-
+@media (max-width: 1338px) {
+  section#cadastro form button {
+    width: 50%;
+  }
 }
-@media(max-width:926px){
-    
-    img#game{
-        display: none;
-    }
-
+@media (max-width: 926px) {
+  img#game {
+    display: none;
+  }
 }
 
-@media(max-width:637px){
-    section#cadastro form input{
-        width: 100%;
-    }
-
-    section#cadastro form button{
-        width: 100%;
-        justify-content: center;
-    }
-
-    section#cadastro h2{
-        width: 100%;
-        margin: 0 3rem 0 3rem;
-    }
-
-}
-
-@media(max-width:500px){
-    section#cadastro form input{
-        width: 100%;
-        
-    }
-
-    section#cadastro form button{
-        width: 100%;
-        align-items: center;
-    }
-
-    section#cadastro h2{
-        width: 100%;
-        margin: 0 3rem 0 3rem;
-    }
-
-    header{
-      display: none;
+@media (max-width: 637px) {
+  section#cadastro form input {
+    width: 100%;
   }
 
+  section#cadastro form button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  section#cadastro h2 {
+    width: 100%;
+    margin: 0 3rem 0 3rem;
+  }
 }
 
-@media(max-width:500px){
-    
+@media (max-width: 500px) {
+  section#cadastro form input {
+    width: 100%;
+  }
 
-    footer{
+  section#cadastro form button {
+    width: 100%;
+    align-items: center;
+  }
+
+  section#cadastro h2 {
+    width: 100%;
+    margin: 0 3rem 0 3rem;
+  }
+
+  header {
+    display: none;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  section#cadastro {
+    align-items: center;
+    margin: 0 3rem 0 3rem;
+  }
+
+  section#cadastro form {
+    width: 100%;
+  }
+}
+@media (max-width: 431px) {
+  body {
+    width: 100hw;
+  }
+}
+@media (max-width: 414px) {
+  footer {
+    width: 100%;
+  }
+
+  @media (max-width: 412px) {
+    footer {
       width: 100%;
     }
-
-    section#cadastro{
-      
-      align-items: center;
-      margin: 0 3rem 0 3rem;
   }
 
-  section#cadastro form{
+  section#cadastro {
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  section#cadastro form {
     width: 100%;
-    
   }
-} 
-
-@media(max-width:400px){
-    section#cadastro{
-        margin: 0 auto;
-        align-items: center;
-        
-    }
-
-    
 }
 
-@media(max-width: 400px){
-    
-    footer{
-      width: 100%;
-    }
-
-    section#cadastro{
-      margin: 0 auto;
-      align-items: center;
-      
-  }
-
-  section#cadastro form{
+@media (max-width: 399px) {
+  nav {
     width: 100%;
-    ;
   }
 
- 
-    
-} 
+  nav ul li a {
+    width: 100%;
+    font-size: 80%;
+  }
+}
 
+@media (max-width: 288px) {
+  footer {
+    display: none;
+  }
 
+  body {
+    width: 100%;
+  }
+}
